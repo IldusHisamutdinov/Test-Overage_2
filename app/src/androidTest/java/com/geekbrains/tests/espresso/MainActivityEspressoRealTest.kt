@@ -46,6 +46,16 @@ class MainActivityEspressoRealTest {
         }
     }
 
+    @Test
+    fun activityTextView_IsCompletelyDisplayed() {
+        onView(withId(R.id.toDetailsActivityButton)).check(matches(isCompletelyDisplayed()))
+    }
+
+    @Test
+    fun activityTextView_IsCompletelyDisplayedg() {
+        onView(withId(R.id.searchEditText)).check(matches(isCompletelyDisplayed()))
+    }
+
     @After
     fun close() {
         scenario.close()
