@@ -36,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/searchEditText"
         android:text="@string/to_details" />
 
+
     <TextView
         android:id="@+id/totalCountTextView"
         android:layout_width="match_parent"
@@ -43,10 +44,23 @@
         android:gravity="center_horizontal"
         android:text="@string/results_count"
         android:visibility="invisible"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toDetailsActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         tools:text="Number of results: 42" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Поиск"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toDetailsActivityButton"
+        app:layout_constraintVertical_bias="0.033" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -54,5 +68,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/toDetailsActivityButton" />
+        app:layout_constraintTop_toBottomOf="@id/totalCountTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
