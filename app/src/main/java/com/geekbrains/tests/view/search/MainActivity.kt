@@ -13,6 +13,7 @@ import com.geekbrains.tests.presenter.search.PresenterSearchContract
 import com.geekbrains.tests.presenter.search.SearchPresenter
 import com.geekbrains.tests.repository.GitHubApi
 import com.geekbrains.tests.repository.GitHubRepository
+import com.geekbrains.tests.view.details.DetailsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -31,11 +32,24 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
     }
 
     private fun setUI() {
- //        toDetailsActivityButton.setOnClickListener {
-//            startActivity(DetailsActivity.getIntent(this, totalCount))
-//        }
-            setQueryListener()
-            setRecyclerView()
+        toDetailsActivityButton.setOnClickListener {
+            startActivity(DetailsActivity.getIntent(this, totalCount))
+        }
+        setQueryListener()
+        setRecyclerView()
+        //добавил кнопку
+        button.setOnClickListener {
+            val query = searchEditText.text.toString()
+            if (query.isNotBlank()) {
+                presenter.searchGitHub(query)
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    getString(R.string.enter_search_word),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     private fun setRecyclerView() {
