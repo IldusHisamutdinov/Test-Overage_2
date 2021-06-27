@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
     }
 
     private fun setUI() {
-//        toDetailsActivityButton.setOnClickListener {
+ //        toDetailsActivityButton.setOnClickListener {
 //            startActivity(DetailsActivity.getIntent(this, totalCount))
 //        }
-        setQueryListener()
-        setRecyclerView()
+            setQueryListener()
+            setRecyclerView()
     }
 
     private fun setRecyclerView() {
@@ -65,11 +65,6 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
 
     private fun createRepository(): RepositoryContract {
         return GitHubRepository(createRetrofit().create(GitHubApi::class.java))
-//        return if (BuildConfig.TYPE == FAKE) {
-//            FakeGitHubRepository()
-//        } else {
-//            GitHubRepository(createRetrofit().create(GitHubApi::class.java))
-//        }
     }
 
     private fun createRetrofit(): Retrofit {
