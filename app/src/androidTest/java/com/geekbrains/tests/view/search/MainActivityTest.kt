@@ -10,6 +10,7 @@ import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import com.geekbrains.tests.R
+import com.geekbrains.tests.TEST_NUMBER_OF_RESULTS_PLUS_1
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
@@ -60,12 +61,12 @@ class MainActivityTest {
 
         val textView = onView(
             allOf(
-                withId(R.id.totalCountTextView), withText("Number of results: 1"),
+                withId(R.id.totalCountTextView), withText(TEST_NUMBER_OF_RESULTS_PLUS_1),
                 withParent(withParent(withId(android.R.id.content))),
                 isDisplayed()
             )
         )
-        textView.check(matches(withText("Number of results: 1")))
+        textView.check(matches(withText(TEST_NUMBER_OF_RESULTS_PLUS_1)))
 
         val button = onView(
             allOf(

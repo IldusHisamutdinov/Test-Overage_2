@@ -25,10 +25,10 @@ class MainActivityEspressoFakeTest {
     @Test
     fun activitySearch_IsWorking() {
         onView(withId(R.id.searchEditText)).perform(click())
-        onView(withId(R.id.searchEditText)).perform(replaceText("algol"), closeSoftKeyboard())
+        onView(withId(R.id.searchEditText)).perform(replaceText(TEST_REPLACE_TEXT_ALGOL), closeSoftKeyboard())
         onView(withId(R.id.searchEditText)).perform(pressImeActionButton())
 
-        onView(withId(R.id.totalCountTextView)).check(matches(withText("Number of results: 42")))
+        onView(withId(R.id.totalCountTextView)).check(matches(withText(TEST_NUMBER_OF_RESULTS_42)))
     }
 
     @After
